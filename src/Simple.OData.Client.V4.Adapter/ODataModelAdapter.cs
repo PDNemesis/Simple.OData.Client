@@ -54,7 +54,7 @@ namespace Simple.OData.Client.V4.Adapter
             // HACK to prevent failure due to unsupported ConcurrencyMode attribute
             metadataString = metadataString
                 .Replace(" ConcurrencyMode=\"None\"", "")
-                .Replace(" ConcurrencyMode=\"Fixed\"", "");
+                .Replace(" ConcurrencyMode=\"Fixed\"", "").Replace(" Scale=\"100\"", "");
             using (var reader = XmlReader.Create(new StringReader(metadataString)))
             {
                 reader.MoveToContent();
